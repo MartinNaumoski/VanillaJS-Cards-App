@@ -4,6 +4,7 @@
         <title>Cards page</title>
         <link rel="stylesheet" href="cards.css">
         <script src="cards.js"> </script>
+
     </head>
     <body onload="takeCardsData()">    
         <header id="header">Hello </header> 
@@ -12,7 +13,17 @@
             <input name="name" type="text" id="myInput" onkeyup="sortyByName()" placeholder="Search by name.." title="Type in a name">  
             <button onclick="ascendingSort(document.getElementById('allCards').childNodes)">Acending <i class="arrow up"></i></button>
             <button onclick="decendingSort(document.getElementById('allCards').childNodes)">Desending <i class="arrow down"></i></button>
-           
+            <label for="filterColor">Select color: </label>
+            <select name="filterColor" id="filterColor" onchange="filterByColor()">
+                <option value="White" >White</option>
+                <option value="Blue"> Blue</option>
+                <option value="Black"> Black</option>
+                <option value="Red"> Red</option>
+                <option value="Green"> Green</option>
+            </select>
+            <label>Select type: </label>
+            <select id="types"></select>
+
         </div>
        
         <div id="loader" style="display: none"></div>
